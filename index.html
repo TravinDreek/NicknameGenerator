@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nickname Generator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.bootcss.com/muicss/0.9.43/css/mui.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/muicss/0.9.43/js/mui.min.js"></script>
+	<script src="nickgen.js"></script>
+	<script src="script.js"></script>
+</head>
+
+<body style="background-color:#f8f8f8; ">
+	<div style="width: 400px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="mui-panel mui--text-center">
+		<div style="height:32px"></div>
+		<p style="font-size:32px">Nickname Generator</p>
+		<p style="font-size:16px">Generate random nicknames with this tool</p>
+		<button class="mui-btn mui-btn--primary mui-btn--raised mui--text-center" onClick="Generate()">Generate</button>
+		<div style="hight:32px"></div>
+		<form class="mui-form--inline">
+			<div class="mui-textfield"><input title="Click to Copy" onClick="Copy()" style="cursor:pointer; text-align:center" type="text" id="output" readonly></div>
+		</form>
+		<div style="height:32px"></div>
+	</div>
+</body>
+</html>
