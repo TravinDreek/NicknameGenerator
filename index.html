@@ -8,19 +8,46 @@
 	<script src="https://cdn.bootcss.com/muicss/0.9.43/js/mui.min.js"></script>
 	<script src="nickgen.js"></script>
 	<script src="script.js"></script>
+	<style type="text/css">
+		.panel-center{
+			top: 50%;
+			left: 50%;
+			width: 400px;
+			position: absolute;
+			transition: all .5s;
+			transform: translate(-50%, -50%);
+		}
+		.hidden{
+			opacity: 0;
+			visibility: hidden;
+		}
+	</style>
 </head>
 
-<body style="background-color:#f8f8f8; ">
-	<div style="width: 400px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="mui-panel mui--text-center">
+<body style="background-color:#f8f8f8;">
+	<div class="mui-panel mui--text-center panel-center" id="main">
 		<div style="height:32px"></div>
 		<p style="font-size:32px">Nickname Generator</p>
 		<p style="font-size:16px">Generate random nicknames with this tool</p>
-		<button class="mui-btn mui-btn--primary mui-btn--raised mui--text-center" onClick="Generate()">Generate</button>
+		<button class="mui-btn mui-btn--raised" onClick="Settings()">Settings</button>
+		<button class="mui-btn mui-btn--primary mui-btn--raised" onClick="Generate()">Generate</button>
 		<div style="hight:32px"></div>
 		<form class="mui-form--inline">
 			<div class="mui-textfield"><input title="Click to Copy" onClick="Copy()" style="cursor:pointer; text-align:center" type="text" id="output" readonly></div>
 		</form>
 		<div style="height:32px"></div>
+	</div>
+	<!-- Pardon me, I'm not good at HTML... -->
+	<div class="mui-panel mui--text-center panel-center hidden" id="settings">
+		<div style="height:32px"></div>
+		<p style="font-size:32px">Settings</p>
+		<p style="font-size:16px">You can remove or add patterns here.</p>
+		<form class="mui-form--inline">
+			<div class="mui-textfield"><textarea style="resize:vertical; width: 320px; height: 160px; max-height: 320px; text-align:center" spellcheck="false" placeholder="Enter one pattern per line. &#13;&#10;Available variables: {adj}, {n} and {num}." id="input"></textarea></div>
+		</form>
+		<button class="mui-btn mui-btn--raised mui-btn--danger" onClick="Reset()">Reset</button>
+		<button class="mui-btn mui-btn--raised mui-btn--primary" onClick="Apply()">Apply</button>
+		<div style="height:16px"></div>
 	</div>
 </body>
 </html>
